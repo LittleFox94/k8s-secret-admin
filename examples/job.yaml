@@ -9,15 +9,15 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name:            k8s-secret-admin
-          image:           littlefox/k8s-secret-admin:v0.1.0
-          imagePullPolicy: ifNotPresent
+          image:           littlefox/k8s-secret-admin:latest
+          imagePullPolicy: IfNotPresent
           args:
           - --name
           - application-config
           - --namespace
           - the-next-big-thing
 
-          #will generate "session-key" as random 128 byte sequence
+          # will generate "session-key" as random 128 byte sequence
           - --bytes
           - session-key=128
 
